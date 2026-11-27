@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.BOXIBY" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/boxiby_bleu</item>
+        <item name="android:windowBackground">@color/gris_fond</item>
+    </style>
+
+    <style name="Theme.BOXIBY.Splash" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/blanc</item>
+        <item name="android:statusBarColor">@color/blanc</item>
+        <item name="android:navigationBarColor">@color/blanc</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

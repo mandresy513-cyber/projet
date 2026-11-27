@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="boxiby_bleu">#0E4169</color>
+    <color name="boxiby_orange">#BC5719</color>
+    <color name="blanc">#FFFFFF</color>
+    <color name="gris_fond">#F5F6F8</color>
+    <color name="texte_gris">#5F6B7A</color>
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/box_erreur"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/blanc"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/logo_boxiby" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:text="@string/erreur_reseau"
+            android:textColor="@color/texte_gris"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btn_reessayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/boxiby_orange"
+            android:text="@string/reessayer"
+            android:textColor="@color/blanc" />
+    </LinearLayout>
+
+</FrameLayout>
