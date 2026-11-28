@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- IMPORTANT : mettez ici l'adresse de votre site BOXIBY (ex. https://www.boxiby.mg/) -->
+    <string name="site_url" translatable="false">https://www.boxiby.mg/</string>
+
+    <string name="app_name">BOXIBY</string>
+    <string name="splash_slogan">Livraison · Achat pour compte · Déplacement</string>
+    <string name="chargement">Chargement…</string>
+    <string name="erreur_reseau">Connexion impossible.\nVérifiez votre connexion Internet puis réessayez.</string>
+    <string name="reessayer">Réessayer</string>
+</resources>
