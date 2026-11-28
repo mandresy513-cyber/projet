@@ -118,7 +118,7 @@ Changer mon mot de passe
 <dt>Orange Money</dt><dd id="val-orange">—</dd>
 <dt>Airtel Money</dt><dd id="val-airtel">—</dd>
 </dl>
-<p class="muted small-t">Codes USSD de paiement automatique : MVola <code>#111*1*2*1*<numéro>*<montant>#</code> · Airtel <code>*436*2*1*1*<numéro>*<montant>#</code> · Orange <code>#144*1*1*<numéro>*<montant>#</code></p>
+<p class="muted small-t">Codes USSD de paiement automatique : MVola <code>#111*1*2*1*&lt;numéro&gt;*&lt;montant&gt;#</code> · Airtel <code>*436*2*1*1*&lt;numéro&gt;*&lt;montant&gt;#</code> · Orange <code>#144*1*1*&lt;numéro&gt;*&lt;montant&gt;#</code></p>
 </div>
 <h3>Liste des paiements Mobile Money</h3>
 <div id="list-paiements"><p class="muted">Chargement…</p></div>
