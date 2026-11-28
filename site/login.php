@@ -127,6 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="BOXIBY">
 <link rel="manifest" href="manifest.json">
+<link rel="icon" href="assets/img/favicon.ico">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="apple-touch-startup-image" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)" href="assets/img/startup-iphone.png">
 <link rel="apple-touch-startup-image" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)" href="assets/img/startup-iphone-2.png">
@@ -157,6 +158,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </style>
 </head>
 <body class="login-body">
+<div id="splash" aria-hidden="true"><img src="assets/img/logo.png" alt="BOXIBY Madagascar"><i class="bx-spin"></i></div>
 <form class="login-card" method="post">
 <a href="index.php" class="logo-plate big"><img src="assets/img/logo.png" alt="BOXIBY Madagascar"></a>
 

@@ -24,6 +24,7 @@ try {
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="BOXIBY">
 <link rel="manifest" href="manifest.json">
+<link rel="icon" href="assets/img/favicon.ico">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="apple-touch-startup-image" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)" href="assets/img/startup-iphone.png">
 <link rel="apple-touch-startup-image" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)" href="assets/img/startup-iphone-2.png">

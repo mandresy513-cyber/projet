@@ -273,4 +273,13 @@ window.BXC = { $, $$, esc, url, ar, initiales, api, toast, beep, initTheme, make
 if ('serviceWorker' in navigator && location.protocol === 'https:') {
     window.addEventListener('load', () => navigator.serviceWorker.register((window.BASE || '') + 'sw.js').catch(() => {}));
 }
+
+/* Écran de démarrage (splash) : logo + chargement, comme à l'ouverture d'une application. */
+const splash = $('#splash');
+if (splash) {
+    let ferme = false;
+    const fermer = () => { if (ferme) return; ferme = true; splash.classList.add('off'); setTimeout(() => splash.remove(), 500); };
+    window.addEventListener('load', () => setTimeout(fermer, 900));
+    setTimeout(fermer, 3500);
+}
 })();

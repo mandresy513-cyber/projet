@@ -1858,3 +1858,10 @@ dialog.wide { width: min(860px, 96vw); max-height: 92vh; overflow-y: auto; }
 }
 
 
+
+/* ===== Écran de démarrage (splash, comme une application) ===== */
+#splash{position:fixed;inset:0;z-index:9999;background:var(--bg,#fff);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;transition:opacity .45s ease}
+#splash img{width:min(60vw,300px);height:auto}
+#splash .bx-spin{width:34px;height:34px;border:3px solid rgba(14,65,105,.18);border-top-color:#BC5719;border-radius:50%;animation:bxspin .9s linear infinite}
+#splash.off{opacity:0;pointer-events:none}
+@keyframes bxspin{to{transform:rotate(360deg)}}

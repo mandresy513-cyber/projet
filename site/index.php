@@ -15,6 +15,7 @@ $ini = $me ? htmlspecialchars(mb_strtoupper(mb_substr($me['prenom'], 0, 1) . mb_
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="BOXIBY">
 <link rel="manifest" href="manifest.json">
+<link rel="icon" href="assets/img/favicon.ico">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <link rel="apple-touch-startup-image" media="(device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3)" href="assets/img/startup-iphone.png">
 <link rel="apple-touch-startup-image" media="(device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3)" href="assets/img/startup-iphone-2.png">
@@ -24,6 +25,7 @@ $ini = $me ? htmlspecialchars(mb_strtoupper(mb_substr($me['prenom'], 0, 1) . mb_
 <script>try{if(localStorage.getItem('bx-theme')==='dark')document.documentElement.dataset.theme='dark'}catch(e){}</script>
 </head>
 <body>
+<div id="splash" aria-hidden="true"><img src="assets/img/logo.png" alt="BOXIBY Madagascar"><i class="bx-spin"></i></div>
 <header class="topbar">
 <div class="logo-plate">
   <img
