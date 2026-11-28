@@ -268,4 +268,9 @@ function prune(store, keepKeys) {
 }
 
 window.BXC = { $, $$, esc, url, ar, initiales, api, toast, beep, initTheme, makeMap, pin, route, watchPosition, upsert, prune, ANALAMANGA, geoMessage, getPosition, ago, lancerUSSD, totalCommande };
+
+/* PWA : rend le site installable (icône sur l'écran d'accueil Android + iPhone). */
+if ('serviceWorker' in navigator && location.protocol === 'https:') {
+    window.addEventListener('load', () => navigator.serviceWorker.register((window.BASE || '') + 'sw.js').catch(() => {}));
+}
 })();
