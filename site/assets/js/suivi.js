@@ -8,7 +8,7 @@ if (!T) { $('#box-status').innerHTML = '<p class="alert">Lien de suivi invalide.
 const map = makeMap('map');
 const layer = L.layerGroup().addTo(map);
 const store = {};
-let C = null, fitted = false, livFitted = false, routed = false;
+let C = null, fitted = false, livFitted = false, routed = false, livLine = null, livFrom = null, livDest = null, livSeq = 0;
 const STEPS = [['en_attente', 'Demande reçue'], ['affectee', 'Livreur affecté'], ['en_cours', 'En cours'], ['livree', 'Livrée']];
 const SERVICE = { colis: 'Livraison de colis', achat: 'Achat pour compte', deplacement: 'Déplacement' };
 const tot = (c, base) => (+c.montant_articles || +c.montant_options) ? `<br><small>Articles ${ar(c.montant_articles)}${+c.montant_options ? ' · Options ' + ar(c.montant_options) : ''}</small><br>Total à payer : <b>${ar(base + +c.montant_articles + +c.montant_options)}</b>` : '';
@@ -220,6 +220,21 @@ box.querySelectorAll('.rate button').forEach(b => b.addEventListener('click', as
 try { await api('client', 'rate', { method: 'POST', data: { t: T, cible: b.closest('.rate').dataset.cible, note: +b.dataset.note } }); maj(); } catch (e) { toast(e.message); }
 }));
 }
+function majTrajetLivreur(liv, dest) {
+    const from = [liv.lat, liv.lng];
+    const besoin = !livFrom || livDest !== dest
+        || (Math.abs(livFrom[0] - from[0]) + Math.abs(livFrom[1] - from[1])) > 0.002;
+    if (!besoin) return;
+    const seq = ++livSeq;
+    livFrom = from; livDest = dest;
+    if (livLine) { layer.removeLayer(livLine); livLine = null; }
+    livLine = L.polyline([from, dest], { color: '#0E4169', weight: 3, opacity: .6, dashArray: '8 8' }).addTo(layer);
+    route(from, dest).then(line => {
+        if (seq !== livSeq || !line) return;
+        layer.removeLayer(livLine);
+        livLine = L.polyline(line, { color: '#0E4169', weight: 4, opacity: .85 }).addTo(layer);
+    });
+}
 function majCarte() {
 const c = C, A = [c.depart_lat, c.depart_lng], B = [c.arrivee_lat, c.arrivee_lng];
 upsert(store, 'A', A, () => pin('A', 'dest'), layer, 'Récupération : ' + esc(c.depart_adresse));
@@ -232,7 +247,8 @@ const st = liv.live ? '' : 'stale';
 upsert(store, 'L', [liv.lat, liv.lng], () => pin(initiales(c.livreur.prenom, c.livreur.nom), st, c.livreur.photo_profil), layer,
 `<b>${esc(c.livreur.prenom)}</b> — votre livreur<br>${liv.live ? 'Position en direct' : 'Dernière position connue ' + ago(liv.age)}`, st).setZIndexOffset(800);
 bounds.extend([liv.lat, liv.lng]);
-} else if (store.L) { store.L.remove(); delete store.L; }
+majTrajetLivreur(liv, c.recupere ? B : A);
+} else if (store.L) { store.L.remove(); delete store.L; if (livLine) { layer.removeLayer(livLine); livLine = null; } livFrom = livDest = null; }
 if (me) bounds.extend(me);
 if (!fitted || (liv && !livFitted)) { map.fitBounds(bounds.pad(0.35)); fitted = true; if (liv) livFitted = true; }
 $('#btn-fit').onclick = () => map.fitBounds(bounds.pad(0.35));
